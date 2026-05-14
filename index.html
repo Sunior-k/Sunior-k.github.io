@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="강문수 / Moonsoo Kang - Mobile Engineer Portfolio" />
+  <title>Moonsoo Kang | Mobile Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <main class="layout">
+    <aside class="sidebar card">
+      <div class="profile-image">
+        <span>MS</span>
+      </div>
+      <h1>강문수</h1>
+      <p class="name-en">Moonsoo Kang</p>
+      <p class="role">Mobile Engineer</p>
+
+      <div class="divider"></div>
+
+      <div class="contact-list">
+        <a href="mailto:t01040174971@gmail.com">t01040174971@gmail.com</a>
+        <a href="https://github.com/Sunior-k" target="_blank" rel="noreferrer">github.com/Sunior-k</a>
+        <a href="#">Resume</a>
+      </div>
+
+      <div class="chip-list">
+        <span>Kotlin</span>
+        <span>Android</span>
+        <span>Compose</span>
+        <span>BLE</span>
+      </div>
+    </aside>
+
+    <section class="content card">
+      <nav class="tabs" aria-label="Portfolio navigation">
+        <button class="tab active" data-target="about">About</button>
+        <button class="tab" data-target="projects">Projects</button>
+        <button class="tab" data-target="resume">Resume</button>
+        <button class="tab" data-target="writing">Writing</button>
+      </nav>
+
+      <section id="about" class="panel active">
+        <p class="eyebrow">Android · Architecture · Reliability</p>
+        <h2>Building reliable mobile systems with architecture, performance, and user experience in mind.</h2>
+        <p class="lead">
+          Kotlin, Jetpack Compose, Coroutines, Hilt, Clean Architecture, Multi-Module 구조를 중심으로
+          사용자가 안정적으로 사용할 수 있는 Android 서비스를 만드는 데 집중합니다.
+        </p>
+
+        <div class="highlight-grid">
+          <article>
+            <h3>Production Reliability</h3>
+            <p>JWT token refresh race condition, BLE write serialization, lifecycle-aware UI state 등 실제 서비스 안정성 문제를 구조적으로 해결했습니다.</p>
+          </article>
+          <article>
+            <h3>Mobile Architecture</h3>
+            <p>Clean Architecture, MVI/MVVM, Multi-Module, Repository/UseCase/ViewModel 분리를 기반으로 확장 가능한 앱 구조를 설계합니다.</p>
+          </article>
+          <article>
+            <h3>UX-centered Engineering</h3>
+            <p>기능 구현을 넘어 재구성 비용, 백그라운드 안정성, 에러 상태, 사용자 흐름까지 고려해 완성도를 높입니다.</p>
+          </article>
+          <article>
+            <h3>Open Source & Learning</h3>
+            <p>Ktor documentation contribution, Android technical writing, portfolio projects를 통해 학습 내용을 검증 가능한 결과물로 남깁니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="panel">
+        <p class="eyebrow">Selected Work</p>
+        <h2>Projects</h2>
+
+        <div class="project-list">
+          <article class="project-card">
+            <div>
+              <p class="project-type">Android · Portfolio</p>
+              <h3>WalkLog</h3>
+              <p>걷기 행동을 기록하고 보상/리포트/위젯으로 이어지는 헬스케어 앱. Compose, Health Connect, WorkManager, Room 기반으로 장기 유지보수 가능한 구조를 설계했습니다.</p>
+            </div>
+            <ul>
+              <li>Clean Architecture + Multi-Module</li>
+              <li>Compose state management</li>
+              <li>Background step tracking</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <p class="project-type">Android · BLE · TMAP EDC</p>
+              <h3>HUD BLE Communication</h3>
+              <p>TMAP EDC 주행 데이터를 HUD 장치로 전송하는 BLE GATT 기반 통신 구조를 구현했습니다. write queue, ACK 처리, MTU, reconnect, binary protocol mapping을 분리했습니다.</p>
+            </div>
+            <ul>
+              <li>GATT write serialization</li>
+              <li>Binary protocol mapping</li>
+              <li>EDC data → HUD command pipeline</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <p class="project-type">Android · AI Diary</p>
+              <h3>Clody</h3>
+              <p>AI 기반 감사 일기 서비스. JWT 인증 안정화, Firebase 기반 품질 모니터링, 사용자 흐름 개선을 통해 실제 운영 관점의 안정성을 개선했습니다.</p>
+            </div>
+            <ul>
+              <li>JWT token refresh with Mutex</li>
+              <li>Firebase Crashlytics monitoring</li>
+              <li>User-centered UX improvements</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <p class="project-type">Android · Alarm</p>
+              <h3>Orbit</h3>
+              <p>미션형 알람 서비스. 알람 해제/미션 시작 흐름, 사용자 상태 기반 UI, 알림 및 알람 상호작용을 안정적으로 처리하는 구조를 고민했습니다.</p>
+            </div>
+            <ul>
+              <li>Alarm interaction flow</li>
+              <li>State-driven UI</li>
+              <li>Feature module separation</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="resume" class="panel">
+        <p class="eyebrow">Engineering Profile</p>
+        <h2>Resume Highlights</h2>
+
+        <div class="timeline">
+          <article>
+            <span>Core Stack</span>
+            <h3>Android Native Development</h3>
+            <p>Kotlin, Jetpack Compose, Coroutines, Flow, Hilt, Room, DataStore, Retrofit, OkHttp, Firebase, WorkManager</p>
+          </article>
+          <article>
+            <span>Architecture</span>
+            <h3>Clean Architecture & Multi-Module</h3>
+            <p>domain/data/presentation 분리, repository/usecase/viewmodel 구조, platform dependency isolation, MVI/MVVM state management</p>
+          </article>
+          <article>
+            <span>Problem Solving</span>
+            <h3>Reliability-first Engineering</h3>
+            <p>토큰 갱신 동시성 문제, BLE GATT write 안정화, Compose recomposition 최적화, 백그라운드 작업 안정성 개선</p>
+          </article>
+          <article>
+            <span>Collaboration</span>
+            <h3>Android Lead & Scrum Master Experience</h3>
+            <p>기능 구현뿐 아니라 일정 관리, 협업 프로세스 개선, 서비스 품질 기준 정리까지 함께 수행했습니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="writing" class="panel">
+        <p class="eyebrow">Technical Notes</p>
+        <h2>Writing Ideas</h2>
+        <div class="writing-list">
+          <article>
+            <h3>How I solved JWT token refresh race conditions with Mutex</h3>
+            <p>여러 API 요청이 동시에 401을 만났을 때 refresh 요청을 하나로 직렬화한 경험.</p>
+          </article>
+          <article>
+            <h3>Designing reliable BLE communication for HUD devices</h3>
+            <p>GATT write queue, ACK, notify, MTU, binary protocol을 안정적으로 다루는 방법.</p>
+          </article>
+          <article>
+            <h3>Reducing unnecessary recomposition in Jetpack Compose</h3>
+            <p>상태 호이스팅, derivedStateOf, side-effect 분리, route/screen 책임 분리를 통한 UI 안정화.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
