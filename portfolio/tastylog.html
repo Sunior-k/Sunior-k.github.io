@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TastyLog — Moonsu Kang</title>
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+</head>
+<body>
+
+  <nav class="pf-nav">
+    <a href="../index.html" class="pf-nav-back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      Portfolio
+    </a>
+    <span class="pf-nav-divider">/</span>
+    <span class="pf-nav-title">TastyLog</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="pf-hero">
+    <p class="pf-hero-label">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      Side Project · Capstone Design
+    </p>
+    <h1>TastyLog</h1>
+    <p class="pf-hero-desc">
+      유튜버가 방문한 맛집을 지도 기반으로 탐색할 수 있는 서비스입니다.<br>
+      2인 팀에서 Android 개발 100%를 담당했고,<br>
+      캡스톤디자인 전시 우수상을 수상했습니다.
+    </p>
+    <div class="pf-badges">
+      <span class="pf-badge"><ion-icon name="people-outline"></ion-icon> 2인 팀 · Android 100%</span>
+      <span class="pf-badge"><ion-icon name="calendar-outline"></ion-icon> 2023.12 — 2024.01 · 리팩토링 2024.10 — 2024.12</span>
+      <span class="pf-badge"><ion-icon name="phone-portrait-outline"></ion-icon> Android · Kotlin</span>
+      <span class="pf-badge highlight"><ion-icon name="trophy-outline"></ion-icon> 캡스톤 우수상</span>
+    </div>
+  </section>
+
+  <!-- ── Screenshot ── -->
+  <div class="pf-screenshot-area">
+    <div class="pf-screenshot-grid">
+      <div class="pf-screenshot-item">지도 홈</div>
+      <div class="pf-screenshot-item">맛집 리스트</div>
+      <div class="pf-screenshot-item">맛집 상세</div>
+      <div class="pf-screenshot-item">검색</div>
+    </div>
+  </div>
+
+  <!-- ── Content ── -->
+  <main class="pf-content">
+
+    <!-- Background -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Background</span>
+      <h2>유튜버 맛집 정보를 왜 지도로 모았는가</h2>
+      <p>
+        유튜버가 방문한 맛집 정보는 영상에 파편화되어 있습니다.
+        원하는 지역의 유튜버 맛집을 한 번에 지도로 탐색하거나 필터링하는 서비스가 없었습니다.
+      </p>
+      <div class="pf-callout">
+        지도와 바텀시트를 결합해 유튜버별 필터링 기능을 제공했습니다.<br>
+        맛집 상세 화면에서는 유튜브 영상을 직접 재생할 수 있도록 연결했습니다.
+      </div>
+      <p>
+        기획, 디자인, Android 개발까지 2인이 분담했으며 Android 개발은 전담했습니다.
+        1차 스프린트(2개월) 이후 Clean Architecture + Multi Module 구조로 전면 리팩토링했습니다.
+      </p>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Role -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Role</span>
+      <h2>2인 팀에서 Android를 전담했습니다</h2>
+      <div class="pf-role-grid">
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">역할</p>
+          <p class="pf-role-card-value">Android 개발 100%</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">팀 구성</p>
+          <p class="pf-role-card-value">Android 1 · BackEnd 1</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">1차 스프린트</p>
+          <p class="pf-role-card-value">2023.12 — 2024.01 (2개월)</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">리팩토링</p>
+          <p class="pf-role-card-value">2024.10 — 2024.12 (2개월)</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Architecture -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Architecture</span>
+      <h2>왜 단일 모듈에서 멀티 모듈로 전환했는가</h2>
+      <p>
+        1차 스프린트는 단일 모듈로 빠르게 개발했습니다.
+        하지만 단일 모듈은 변경 사항에 관계없이 전체 애플리케이션을 다시 빌드해야 했고, 파일 탐색이 어려워졌습니다.
+        추후 여러 개발자가 동시에 작업할 경우 코드 변경으로 인해 충돌이 발생하기 쉬운 구조였습니다.
+      </p>
+      <div class="pf-compare">
+        <div class="pf-compare-side as-is">
+          <p class="pf-compare-label">AS-IS — 단일 모듈</p>
+          <p>변경 사항에 관계없이 전체 재빌드.<br>비즈니스 로직과 데이터 처리 코드가 UI 모듈에 혼재합니다.<br>동시 작업 시 충돌이 잦습니다.</p>
+        </div>
+        <div class="pf-compare-side to-be">
+          <p class="pf-compare-label">TO-BE — Clean Architecture 기반 계층적 모듈</p>
+          <p>기능별 <code>:feature</code>, 계층별 <code>:domain</code> · <code>:data</code>, 공통 <code>:core</code> 모듈로 역할과 책임을 분리합니다.<br><code>:build-logic</code>으로 Gradle 스크립트 중복을 줄이고 빌드 설정을 중앙 관리합니다.</p>
+        </div>
+      </div>
+      <p style="margin-top:20px;">
+        단순히 모듈을 계층별로 분리하는 방법은 각 모듈 간의 의존성 관리가 어렵고 공통 코드 중복이 발생할 수 있었습니다.
+        기능 단위로만 모듈화하는 방식은 비즈니스 로직과 데이터 처리 코드가 UI 모듈에 혼재되는 문제가 있었습니다.
+        최종적으로 Clean Architecture를 기반으로 한 계층적 모듈화를 선택해 <code>:core:network</code>, <code>:core:datastore</code> 같은 공통 기능 모듈로 중복을 방지했습니다.
+      </p>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Technical Decisions -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Technical Decisions</span>
+      <h2>왜 그 기술을 선택했는가</h2>
+      <div class="pf-feature-list">
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="list-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>왜 정적 페이징 대신 동적 페이징으로 무한 스크롤을 구현했는가</h4>
+            <p>
+              맛집 리스트에서 대량의 데이터를 끊김 없이 제공하려면 무한 스크롤이 필요했습니다.
+              정적 페이징 방식은 고정된 페이지 크기로 데이터를 가져오기 때문에 스크롤 위치에 따라 동적으로 데이터를 요청하기 어려웠고, 중복 데이터가 포함되는 문제도 간헐적으로 발생했습니다.
+            </p>
+            <div class="pf-compare" style="margin-top:16px;">
+              <div class="pf-compare-side as-is">
+                <p class="pf-compare-label">AS-IS — 정적 페이징</p>
+                <p>고정 페이지 크기로 데이터 요청.<br>스크롤 위치 기반 동적 로드가 어렵고, 중복 데이터가 발생합니다.</p>
+              </div>
+              <div class="pf-compare-side to-be">
+                <p class="pf-compare-label">TO-BE — 동적 페이징 + 상태 관리</p>
+                <p><code>MutableStateFlow</code>로 로딩 상태와 마지막 페이지 여부를 관리해 중복 요청을 방지합니다.<br><code>distinctBy</code>로 중복 데이터를 제거해 데이터의 고유성을 보장합니다.</p>
+              </div>
+            </div>
+            <p style="margin-top:14px;">
+              <code>RecyclerView.OnScrollListener</code>를 통해 이벤트 기반으로 데이터를 요청해 성능 저하를 최소화했습니다.
+              결과적으로 요청 횟수와 중복 데이터를 줄여 네트워크 및 서버 리소스를 절감했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="share-social-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>카카오톡 공유와 CollapsingToolbarLayout 상세 화면</h4>
+            <p>
+              맛집 상세보기 화면은 <code>CollapsingToolbarLayout</code>으로 스크롤 시 헤더가 자연스럽게 접히는 유연한 UI를 구현했습니다.
+              카카오톡 공유는 KakaoShare SDK를 통해 맛집 정보를 친구에게 직접 공유할 수 있도록 제공했습니다.
+            </p>
+            <p>
+              검색 기능은 최근 검색어와 실시간 검색어를 함께 지원해 사용 편의성을 극대화했습니다.
+              온보딩은 ViewPager2를 활용해 사용자 친화적인 스와이프 방식으로 구성했습니다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Tech Stack -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Tech Stack</span>
+      <h2>사용 기술</h2>
+      <div class="pf-chip-grid">
+        <span class="pf-chip">Kotlin</span>
+        <span class="pf-chip">XML · ViewBinding</span>
+        <span class="pf-chip">Clean Architecture</span>
+        <span class="pf-chip">Multi Module</span>
+        <span class="pf-chip">MVVM</span>
+        <span class="pf-chip">Hilt</span>
+        <span class="pf-chip">Coroutines · Flow</span>
+        <span class="pf-chip">Retrofit · OkHttp</span>
+        <span class="pf-chip">Naver Maps SDK</span>
+        <span class="pf-chip">KakaoShare SDK</span>
+        <span class="pf-chip">ViewPager2</span>
+        <span class="pf-chip">CollapsingToolbarLayout</span>
+        <span class="pf-chip">RecyclerView</span>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section class="pf-section">
+      <h2>Links</h2>
+      <div class="pf-links">
+        <a href="#" target="_blank" rel="noreferrer" class="pf-link-btn primary">
+          <ion-icon name="logo-github"></ion-icon>
+          GitHub Repository
+        </a>
+        <a href="#" target="_blank" rel="noreferrer" class="pf-link-btn">
+          <ion-icon name="document-text-outline"></ion-icon>
+          상세 설명 (Notion)
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

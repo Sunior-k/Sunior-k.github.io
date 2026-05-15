@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orbit — Moonsu Kang</title>
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+</head>
+<body>
+
+  <nav class="pf-nav">
+    <a href="../index.html" class="pf-nav-back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      Portfolio
+    </a>
+    <span class="pf-nav-divider">/</span>
+    <span class="pf-nav-title">Orbit</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="pf-hero">
+    <p class="pf-hero-label">
+      <ion-icon name="star-outline"></ion-icon>
+      YAPP 25th · Android
+    </p>
+    <h1>Orbit</h1>
+    <p class="pf-hero-desc">
+      알람을 해제하는 데 집중한 기존 방식과 달리,<br>
+      미션과 운세로 <strong>즐겁게 일어날 이유</strong>를 만드는 AI 기반 기상 알람 서비스입니다.<br>
+      YAPP 25기 데모데이 대상(1위)을 수상했습니다.
+    </p>
+    <div class="pf-badges">
+      <span class="pf-badge"><ion-icon name="people-outline"></ion-icon> 9인 팀 · Android 개발</span>
+      <span class="pf-badge"><ion-icon name="calendar-outline"></ion-icon> 2024.11 — 2025.03</span>
+      <span class="pf-badge"><ion-icon name="phone-portrait-outline"></ion-icon> Android · Kotlin</span>
+      <span class="pf-badge highlight"><ion-icon name="trophy-outline"></ion-icon> YAPP 25th 대상 (1위)</span>
+    </div>
+  </section>
+
+  <!-- ── Screenshot ── -->
+  <div class="pf-screenshot-area">
+    <div class="pf-screenshot-grid">
+      <div class="pf-screenshot-item">알람 홈</div>
+      <div class="pf-screenshot-item">미션 화면</div>
+      <div class="pf-screenshot-item">운세 결과</div>
+      <div class="pf-screenshot-item">보상 카드</div>
+    </div>
+  </div>
+
+  <!-- ── Content ── -->
+  <main class="pf-content">
+
+    <!-- Background -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Background</span>
+      <h2>기존 알람 앱의 무엇이 문제였는가</h2>
+      <p>
+        기존 기상 알람 앱은 큰 소리와 강제 해제에 집중합니다.
+        알람을 끄는 것이 목표가 되면, 침대에서 일어날 이유는 사라집니다.
+      </p>
+      <div class="pf-callout">
+        알람을 해제하는 게 목표가 되면, 일어나는 이유가 없어집니다.<br>
+        Orbit은 미션을 수행하고 운세를 받는 경험으로 기상 자체를 동기화했습니다.
+      </div>
+      <p>
+        알람 종료 후 즉시 운세를 주는 대신, 흔들기 또는 클릭 미션을 완료해야만 운세를 획득할 수 있습니다.
+        미션 타입은 Firebase Remote Config로 실시간 제어해 A/B 테스트와 이벤트 운영이 가능합니다.
+      </p>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Role -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Role</span>
+      <h2>9인 팀에서 Android를 담당했습니다</h2>
+      <div class="pf-role-grid">
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">역할</p>
+          <p class="pf-role-card-value">Android 개발</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">팀 구성</p>
+          <p class="pf-role-card-value">PM 1 · Design 2 · Android 2 · iOS 2 · BE 2</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">기간</p>
+          <p class="pf-role-card-value">2024.11 — 2025.03</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">담당 기능</p>
+          <p class="pf-role-card-value">기초 세팅 · 온보딩 · 미션 · 운세 · 마이페이지</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Architecture -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Architecture</span>
+      <h2>왜 클린 아키텍처와 멀티 모듈을 함께 썼는가</h2>
+      <p>
+        기능이 복잡해질수록 사용자 경험 중심의 빠른 개선이 요구될 것으로 예상했기 때문에,
+        초기 설계 단계부터 유지보수성과 확장성을 함께 고려했습니다.
+      </p>
+      <div class="pf-compare">
+        <div class="pf-compare-side as-is">
+          <p class="pf-compare-label">AS-IS — 단일 모듈</p>
+          <p>UI 로직, 비즈니스 로직, 데이터 처리가 혼재.<br>미션 기능 개선이 다른 기능에 영향을 줍니다.</p>
+        </div>
+        <div class="pf-compare-side to-be">
+          <p class="pf-compare-label">TO-BE — Clean Architecture + Multi Module</p>
+          <p>Presentation · Domain · Data 3계층으로 책임을 분리합니다.<br>미션 개선은 <code>feature:mission</code> 내에서만 이루어지고, 다른 기능과 충돌하지 않습니다.</p>
+        </div>
+      </div>
+      <p style="margin-top:20px;">
+        모듈 구조는 <code>feature modules</code> → <code>:domain module</code> → <code>:data module</code>의 단방향 의존성을 따르며,
+        <code>:core:designsystem</code>, <code>:core:ui</code>, <code>:core:network</code>, <code>:core:datastore</code>,
+        <code>:core:security</code>, <code>:core:buildconfig</code> 공통 모듈로 중복을 제거했습니다.
+      </p>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Technical Decisions -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Technical Decisions</span>
+      <h2>왜 그 기술을 선택했는가</h2>
+      <div class="pf-feature-list">
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="options-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>왜 Firebase Remote Config로 미션 타입을 제어했는가</h4>
+            <p>
+              단순 랜덤 방식으로 미션을 결정하면 배포 후 비율을 조정하거나 A/B 테스트를 하기 위해 매번 앱을 다시 빌드해야 합니다.
+              Firebase Remote Config를 활용해 미션 종류와 출현 여부를 실시간으로 조절할 수 있도록 설계했습니다.
+            </p>
+            <div class="pf-compare" style="margin-top:16px;">
+              <div class="pf-compare-side as-is">
+                <p class="pf-compare-label">AS-IS</p>
+                <p>미션 타입 하드코딩.<br>비율 조정마다 앱 재배포가 필요합니다.</p>
+              </div>
+              <div class="pf-compare-side to-be">
+                <p class="pf-compare-label">TO-BE</p>
+                <p>RemoteConfig로 실시간 제어합니다.<br>Shake 29.3% / Tap 70.7% A/B 테스트를 배포 이후에도 운영했습니다.</p>
+              </div>
+            </div>
+            <p style="margin-top:14px;">
+              Firebase Remote Config는 Android SDK에 종속된 라이브러리이기 때문에 Data Layer에서만 접근하도록 분리하고,
+              Domain에서는 <code>RemoteConfigRepository</code>를 통해 추상화했습니다.
+              ViewModel은 오직 UseCase를 통해 미션 타입만 받아 사용하므로 테스트 환경 교체가 용이합니다.
+              미션 타입은 <code>sealed class MissionType</code>으로 정의해 새로운 미션이 필요할 경우 타입만 추가하면 Domain과 Presentation만 보완하면 됩니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="image-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>왜 운세 보상 이미지를 MediaStore로 저장했는가</h4>
+            <p>
+              운세 결과를 저장하거나 공유하고 싶다는 사용자 니즈를 반영해 보상 이미지를 갤러리에 저장하는 기능을 구현했습니다.
+              Android 10 이상에서는 <code>WRITE_EXTERNAL_STORAGE</code> 권한 없이도 MediaStore를 통해 PNG 형식으로 저장할 수 있기 때문에 MediaStore를 선택했습니다.
+            </p>
+            <p>
+              설계는 <code>ViewModel → Repository → LocalDataSource</code> 구조로 구성했으며,
+              이미지 저장 처리를 UI 로직과 분리해 내부 로직에서 실패를 감지하고 로그만 처리하도록 했습니다.
+              처리 흐름은 <code>Bitmap → ByteArray → OutputStream</code> 순으로 구성했고,
+              ByteArray 기반의 범용 처리 구조 덕분에 외부 이미지나 뷰 기반 캡처 이미지도 동일한 흐름으로 확장할 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Tech Stack -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Tech Stack</span>
+      <h2>사용 기술</h2>
+      <div class="pf-chip-grid">
+        <span class="pf-chip">Kotlin</span>
+        <span class="pf-chip">Jetpack Compose</span>
+        <span class="pf-chip">Orbit-MVI</span>
+        <span class="pf-chip">Clean Architecture</span>
+        <span class="pf-chip">Multi Module</span>
+        <span class="pf-chip">Hilt</span>
+        <span class="pf-chip">Coroutines · Flow</span>
+        <span class="pf-chip">DataStore</span>
+        <span class="pf-chip">Firebase Remote Config</span>
+        <span class="pf-chip">MediaStore</span>
+        <span class="pf-chip">Lottie</span>
+        <span class="pf-chip">git actions CI/CD</span>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section class="pf-section">
+      <h2>Links</h2>
+      <div class="pf-links">
+        <a href="#" target="_blank" rel="noreferrer" class="pf-link-btn primary">
+          <ion-icon name="logo-github"></ion-icon>
+          GitHub Repository
+        </a>
+        <a href="#" target="_blank" rel="noreferrer" class="pf-link-btn">
+          <ion-icon name="document-text-outline"></ion-icon>
+          상세 설명 (Notion)
+        </a>
+        <a href="#" target="_blank" rel="noreferrer" class="pf-link-btn">
+          <ion-icon name="logo-google-playstore"></ion-icon>
+          PlayStore
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

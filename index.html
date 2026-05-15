@@ -1,185 +1,863 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="강문수 / Moonsoo Kang - Mobile Engineer Portfolio" />
-  <title>Moonsoo Kang | Mobile Engineer</title>
+  <meta name="description" content="강문수 / Android Mobile Engineer Portfolio" />
+  <title>Sunior | Android Engineer</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/pretendardvariable.css">
+
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <main class="layout">
-    <aside class="sidebar card">
-      <div class="profile-image">
-        <span>MS</span>
-      </div>
-      <h1>강문수</h1>
-      <p class="name-en">Moonsoo Kang</p>
-      <p class="role">Mobile Engineer</p>
 
-      <div class="divider"></div>
+  <main>
 
-      <div class="contact-list">
-        <a href="mailto:t01040174971@gmail.com">t01040174971@gmail.com</a>
-        <a href="https://github.com/Sunior-k" target="_blank" rel="noreferrer">github.com/Sunior-k</a>
-        <a href="#">Resume</a>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <div class="avatar-initials">MS</div>
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name">Moonsu Kang</h1>
+          <p class="sub-name">Sunior</p>
+          <span class="title">Android Engineer</span>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn aria-label="Show Contacts">
+          <span data-i18n="sidebar-btn-open">Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
       </div>
 
-      <div class="chip-list">
-        <span>Kotlin</span>
-        <span>Android</span>
-        <span>Compose</span>
-        <span>BLE</span>
+      <div class="sidebar-info_more" data-sidebar-more>
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title" data-i18n="contact-email">Email</p>
+              <a href="mailto:rkdms4971@gmail.com" class="contact-link">rkdms4971@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title" data-i18n="contact-specialty">Specialty</p>
+              <span class="contact-link">Android Native</span>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title" data-i18n="contact-experience">Experience</p>
+              <time data-i18n="contact-exp-value">Entry Level · 2025</time>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title" data-i18n="contact-location">Location</p>
+              <address data-i18n="contact-location-value">Seoul, South Korea</address>
+            </div>
+          </li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://github.com/Sunior-k" target="_blank" rel="noreferrer" class="social-link" data-tooltip="GitHub · Sunior-k">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://github.com/moonsukang" target="_blank" rel="noreferrer" class="social-link" data-tooltip="GitHub · moonsukang">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://velog.io/@rivermoon99" target="_blank" rel="noreferrer" class="social-link" data-tooltip="Velog · rivermoon99">
+              <ion-icon name="create-outline"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
       </div>
+
     </aside>
 
-    <section class="content card">
-      <nav class="tabs" aria-label="Portfolio navigation">
-        <button class="tab active" data-target="about">About</button>
-        <button class="tab" data-target="projects">Projects</button>
-        <button class="tab" data-target="resume">Resume</button>
-        <button class="tab" data-target="writing">Writing</button>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="main-content">
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><button class="navbar-link active" data-nav-link>About</button></li>
+          <li><button class="navbar-link" data-nav-link>Resume</button></li>
+          <li><button class="navbar-link" data-nav-link>Portfolio</button></li>
+          <li><button class="navbar-link" data-nav-link>Writing</button></li>
+          <li><button class="navbar-link" data-nav-link>Contact</button></li>
+        </ul>
+        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">KO</button>
       </nav>
 
-      <section id="about" class="panel active">
-        <p class="eyebrow">Android · Architecture · Reliability</p>
-        <h2>Building reliable mobile systems with architecture, performance, and user experience in mind.</h2>
-        <p class="lead">
-          Kotlin, Jetpack Compose, Coroutines, Hilt, Clean Architecture, Multi-Module 구조를 중심으로
-          사용자가 안정적으로 사용할 수 있는 Android 서비스를 만드는 데 집중합니다.
-        </p>
 
-        <div class="highlight-grid">
-          <article>
-            <h3>Production Reliability</h3>
-            <p>JWT token refresh race condition, BLE write serialization, lifecycle-aware UI state 등 실제 서비스 안정성 문제를 구조적으로 해결했습니다.</p>
-          </article>
-          <article>
-            <h3>Mobile Architecture</h3>
-            <p>Clean Architecture, MVI/MVVM, Multi-Module, Repository/UseCase/ViewModel 분리를 기반으로 확장 가능한 앱 구조를 설계합니다.</p>
-          </article>
-          <article>
-            <h3>UX-centered Engineering</h3>
-            <p>기능 구현을 넘어 재구성 비용, 백그라운드 안정성, 에러 상태, 사용자 흐름까지 고려해 완성도를 높입니다.</p>
-          </article>
-          <article>
-            <h3>Open Source & Learning</h3>
-            <p>Ktor documentation contribution, Android technical writing, portfolio projects를 통해 학습 내용을 검증 가능한 결과물로 남깁니다.</p>
-          </article>
-        </div>
-      </section>
+      <!-- ===== ABOUT ===== -->
+      <article class="about active" data-page="about">
 
-      <section id="projects" class="panel">
-        <p class="eyebrow">Selected Work</p>
-        <h2>Projects</h2>
+        <header>
+          <h2 class="h2 article-title" data-i18n="about-title">About Me</h2>
+        </header>
 
-        <div class="project-list">
-          <article class="project-card">
-            <div>
-              <p class="project-type">Android · Portfolio</p>
-              <h3>WalkLog</h3>
-              <p>걷기 행동을 기록하고 보상/리포트/위젯으로 이어지는 헬스케어 앱. Compose, Health Connect, WorkManager, Room 기반으로 장기 유지보수 가능한 구조를 설계했습니다.</p>
+        <section class="self-overview">
+          <p data-i18n-html="about-p1">
+            A mobile engineer who builds <strong>reliable and scalable Android services</strong> with Kotlin and Jetpack Compose.
+            I design long-term maintainable apps through Clean Architecture and Multi-Module structure,
+            going beyond simple feature implementation to consider user experience and system reliability.
+          </p>
+          <p data-i18n-html="about-p2">
+            I have experience <strong>structurally solving</strong> complex problems in production services,
+            including JWT token refresh race conditions, BLE GATT write stabilization,
+            and Compose recomposition optimization.
+          </p>
+        </section>
+
+        <!-- What I'm doing -->
+        <section class="service">
+          <h3 class="h3 section-subtitle" data-i18n="doing-title">What I'm Doing</h3>
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Android Development</h4>
+                <p class="service-item-text" data-i18n="service-android">Building high-quality Android apps with Kotlin + Jetpack Compose. State management with MVI/MVVM patterns.</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="layers-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Architecture Design</h4>
+                <p class="service-item-text" data-i18n="service-arch">Designing scalable app architecture based on Clean Architecture + Multi-Module and maintaining code quality.</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="bluetooth-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">BLE / Hardware</h4>
+                <p class="service-item-text" data-i18n="service-ble">Implementing hardware communication features including BLE GATT, binary protocol, and HUD device integration.</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Reliability Engineering</h4>
+                <p class="service-item-text" data-i18n="service-reliability">JWT auth stabilization, structural resolution of concurrency issues, and quality monitoring with Firebase Crashlytics.</p>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- Tech chips -->
+        <section class="tech-section">
+          <h3 class="h3 section-subtitle">Tech Stack</h3>
+          <div class="chip-grid">
+            <span class="chip">Kotlin</span>
+            <span class="chip">Jetpack Compose</span>
+            <span class="chip">Coroutines</span>
+            <span class="chip">Flow</span>
+            <span class="chip">Hilt</span>
+            <span class="chip">Room</span>
+            <span class="chip">Retrofit</span>
+            <span class="chip">OkHttp</span>
+            <span class="chip">DataStore</span>
+            <span class="chip">WorkManager</span>
+            <span class="chip">Firebase</span>
+            <span class="chip">BLE GATT</span>
+            <span class="chip">Clean Architecture</span>
+            <span class="chip">Multi-Module</span>
+            <span class="chip">MVI / MVVM</span>
+          </div>
+        </section>
+
+      </article>
+
+
+      <!-- ===== RESUME ===== -->
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title" data-i18n="resume-title">Resume</h2>
+        </header>
+
+        <!-- Education -->
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
             </div>
-            <ul>
-              <li>Clean Architecture + Multi-Module</li>
-              <li>Compose state management</li>
-              <li>Background step tracking</li>
-            </ul>
-          </article>
+            <h3 class="h3" data-i18n="edu-heading">Education</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="edu-school">Kangnam University</h4>
+              <span>2023 — 2025</span>
+              <p class="timeline-text" data-i18n="edu-text">B.S. in Software Application. Graduated February 2025.</p>
+            </li>
+          </ol>
+        </section>
 
-          <article class="project-card">
-            <div>
-              <p class="project-type">Android · BLE · TMAP EDC</p>
-              <h3>HUD BLE Communication</h3>
-              <p>TMAP EDC 주행 데이터를 HUD 장치로 전송하는 BLE GATT 기반 통신 구조를 구현했습니다. write queue, ACK 처리, MTU, reconnect, binary protocol mapping을 분리했습니다.</p>
+        <!-- Career -->
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
             </div>
-            <ul>
-              <li>GATT write serialization</li>
-              <li>Binary protocol mapping</li>
-              <li>EDC data → HUD command pipeline</li>
-            </ul>
-          </article>
+            <h3 class="h3" data-i18n="career-heading">Career</h3>
+          </div>
+          <ol class="timeline-list">
 
-          <article class="project-card">
-            <div>
-              <p class="project-type">Android · AI Diary</p>
-              <h3>Clody</h3>
-              <p>AI 기반 감사 일기 서비스. JWT 인증 안정화, Firebase 기반 품질 모니터링, 사용자 흐름 개선을 통해 실제 운영 관점의 안정성을 개선했습니다.</p>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">SK m&amp;service — Software Engineer</h4>
+              <span>2025</span>
+              <p class="timeline-text" data-i18n="exp-tmap">Android Engineer Intern at SK m&service, working on TMAP Auto. Built BLE GATT communication between the Android app and HUD devices. Handled binary protocol conversion for driving data, and designed write queue, ACK, MTU, and reconnect logic.</p>
+            </li>
+
+          </ol>
+        </section>
+
+        <!-- Experience -->
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="people-outline"></ion-icon>
             </div>
-            <ul>
-              <li>JWT token refresh with Mutex</li>
-              <li>Firebase Crashlytics monitoring</li>
-              <li>User-centered UX improvements</li>
-            </ul>
-          </article>
+            <h3 class="h3" data-i18n="exp-heading">Experience</h3>
+          </div>
+          <ol class="timeline-list">
 
-          <article class="project-card">
-            <div>
-              <p class="project-type">Android · Alarm</p>
-              <h3>Orbit</h3>
-              <p>미션형 알람 서비스. 알람 해제/미션 시작 흐름, 사용자 상태 기반 UI, 알림 및 알람 상호작용을 안정적으로 처리하는 구조를 고민했습니다.</p>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="exp-yapp-title">YAPP 25th — Android Part</h4>
+              <span>2024 — 2025</span>
+              <p class="timeline-text" data-i18n="exp-yapp">YAPP 25th Android part. Led Android development of Orbit, an AI-based daily fortune alarm app. Won 1st place at the YAPP 25th demo day.</p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="exp-sopt-title">SOPT 34th — Android Part</h4>
+              <span>2024</span>
+              <p class="timeline-text" data-i18n="exp-sopt">Joined SOPT 34th, a university startup IT club. Worked on the Kakao Pay redesign project and led Android development for Clody, an AI gratitude diary service.</p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="exp-tutor-title">Android Dev Tutoring — Tutor</h4>
+              <span>2022</span>
+              <p class="timeline-text" data-i18n="exp-tutor">Tutored Android development basics using Java and XML for fellow students.</p>
+            </li>
+
+          </ol>
+        </section>
+
+        <!-- Awards -->
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="trophy-outline"></ion-icon>
             </div>
-            <ul>
-              <li>Alarm interaction flow</li>
-              <li>State-driven UI</li>
-              <li>Feature module separation</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+            <h3 class="h3" data-i18n="awards-heading">Awards</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="award-1-title">YAPP 25th Demo Day — 1st Place</h4>
+              <span>2025</span>
+              <p class="timeline-text" data-i18n="award-1-text">AI daily fortune alarm app 'Orbit'</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="award-2-title">Capstone Design Exhibition — Excellence Award</h4>
+              <span>2024</span>
+              <p class="timeline-text" data-i18n="award-2-text">Restaurant map service for YouTubers 'TastyLog'</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="award-3-title">SOPT 34th Demo Day — Excellence Award</h4>
+              <span>2024</span>
+              <p class="timeline-text" data-i18n="award-3-text">AI gratitude diary service 'Clody'</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="award-4-title">S/W Dept. Academic Festival — Grand Prize</h4>
+              <span>2023</span>
+              <p class="timeline-text" data-i18n="award-4-text">Job support service for students 'Career'</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="award-5-title">KSCI Winter Conference — Best Paper Award</h4>
+              <span>2023</span>
+              <p class="timeline-text">Development of Smart Closet Using IoT</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="award-6-title">KSCI Summer Conference — Best Paper Award</h4>
+              <span>2022</span>
+              <p class="timeline-text">Smart Closet Design using IoT Sensor</p>
+            </li>
+          </ol>
+        </section>
 
-      <section id="resume" class="panel">
-        <p class="eyebrow">Engineering Profile</p>
-        <h2>Resume Highlights</h2>
+        <!-- Open Source -->
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="code-slash-outline"></ion-icon>
+            </div>
+            <h3 class="h3" data-i18n="oss-heading">Open Source Contribution</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Ktor Samples</h4>
+              <p class="timeline-text">KTOR-8601 · Enhance chat and client-mpp samples <a href="https://github.com/ktorio/ktor-samples/pull/225" target="_blank" rel="noreferrer" class="oss-link">#225</a></p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Ktor Documentation</h4>
+              <p class="timeline-text">
+                KTOR-8882 · Add IP address discovery for multiplatform tutorial <a href="https://github.com/ktorio/ktor-documentation/pull/678" target="_blank" rel="noreferrer" class="oss-link">#678</a><br>
+                fix(docs): correct API references and env variable handling <a href="https://github.com/ktorio/ktor-documentation/pull/677" target="_blank" rel="noreferrer" class="oss-link">#677</a><br>
+                fix(docs): Enhance clarity and fix typos across server docs <a href="https://github.com/ktorio/ktor-documentation/pull/637" target="_blank" rel="noreferrer" class="oss-link">#637</a><br>
+                Fix correct OPTIONS method name and improve formParameters grammar <a href="https://github.com/ktorio/ktor-documentation/pull/622" target="_blank" rel="noreferrer" class="oss-link">#622</a>
+              </p>
+            </li>
+          </ol>
+        </section>
 
-        <div class="timeline">
-          <article>
-            <span>Core Stack</span>
-            <h3>Android Native Development</h3>
-            <p>Kotlin, Jetpack Compose, Coroutines, Flow, Hilt, Room, DataStore, Retrofit, OkHttp, Firebase, WorkManager</p>
-          </article>
-          <article>
-            <span>Architecture</span>
-            <h3>Clean Architecture & Multi-Module</h3>
-            <p>domain/data/presentation 분리, repository/usecase/viewmodel 구조, platform dependency isolation, MVI/MVVM state management</p>
-          </article>
-          <article>
-            <span>Problem Solving</span>
-            <h3>Reliability-first Engineering</h3>
-            <p>토큰 갱신 동시성 문제, BLE GATT write 안정화, Compose recomposition 최적화, 백그라운드 작업 안정성 개선</p>
-          </article>
-          <article>
-            <span>Collaboration</span>
-            <h3>Android Lead & Scrum Master Experience</h3>
-            <p>기능 구현뿐 아니라 일정 관리, 협업 프로세스 개선, 서비스 품질 기준 정리까지 함께 수행했습니다.</p>
-          </article>
-        </div>
-      </section>
+        <!-- Skills -->
+        <section class="skill">
+          <h3 class="h3 section-subtitle" data-i18n="skills-heading">Core Skills</h3>
+          <ul class="skills-list">
 
-      <section id="writing" class="panel">
-        <p class="eyebrow">Technical Notes</p>
-        <h2>Writing Ideas</h2>
-        <div class="writing-list">
-          <article>
-            <h3>How I solved JWT token refresh race conditions with Mutex</h3>
-            <p>여러 API 요청이 동시에 401을 만났을 때 refresh 요청을 하나로 직렬화한 경험.</p>
-          </article>
-          <article>
-            <h3>Designing reliable BLE communication for HUD devices</h3>
-            <p>GATT write queue, ACK, notify, MTU, binary protocol을 안정적으로 다루는 방법.</p>
-          </article>
-          <article>
-            <h3>Reducing unnecessary recomposition in Jetpack Compose</h3>
-            <p>상태 호이스팅, derivedStateOf, side-effect 분리, route/screen 책임 분리를 통한 UI 안정화.</p>
-          </article>
-        </div>
-      </section>
-    </section>
+            <li class="skills-item">
+              <div class="skill-header">
+                <h5 class="h5">Kotlin / Coroutines / Flow</h5>
+                <data value="95">95%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="95"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="skill-header">
+                <h5 class="h5">Jetpack Compose</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="90"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="skill-header">
+                <h5 class="h5">Clean Architecture · Multi-Module</h5>
+                <data value="88">88%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="88"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="skill-header">
+                <h5 class="h5">Hilt · DI</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="85"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="skill-header">
+                <h5 class="h5">BLE · GATT</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="80"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="skill-header">
+                <h5 class="h5">Firebase · Monitoring</h5>
+                <data value="82">82%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="82"></div>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+      </article>
+
+
+      <!-- ===== PORTFOLIO ===== -->
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title" data-i18n="portfolio-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li><button class="filter-btn active" data-filter-btn>All</button></li>
+            <li><button class="filter-btn" data-filter-btn>Android</button></li>
+            <li><button class="filter-btn" data-filter-btn>BLE</button></li>
+          </ul>
+
+          <ul class="project-list">
+
+            <!-- WalkLog -->
+            <li class="project-item active" data-filter-item data-category="android">
+              <a href="portfolio/walklog.html" class="pj-link">
+                <div class="pj-visual thumb-walklog">
+                  <ion-icon name="footsteps-outline"></ion-icon>
+                </div>
+                <div class="pj-body">
+                  <div class="pj-meta">
+                    <span class="pj-badge pj-badge--wip">In Progress</span>
+                    <span class="pj-year">2026</span>
+                  </div>
+                  <h3 class="pj-title">WalkLog</h3>
+                  <div class="pj-chips">
+                    <span>Android</span><span>Health Connect</span><span>NDK</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- HUD BLE -->
+            <li class="project-item active" data-filter-item data-category="ble">
+              <a href="portfolio/hud-ble.html" class="pj-link">
+                <div class="pj-visual thumb-ble">
+                  <ion-icon name="bluetooth-outline"></ion-icon>
+                </div>
+                <div class="pj-body">
+                  <div class="pj-meta">
+                    <span class="pj-badge pj-badge--company">SK m&amp;service</span>
+                    <span class="pj-year">2025</span>
+                  </div>
+                  <h3 class="pj-title">SK m&service</h3>
+                  <div class="pj-chips">
+                    <span>BLE GATT</span><span>Kotlin</span><span>Coroutines</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Orbit -->
+            <li class="project-item active" data-filter-item data-category="android">
+              <a href="portfolio/orbit.html" class="pj-link">
+                <div class="pj-visual thumb-orbit">
+                  <ion-icon name="alarm-outline"></ion-icon>
+                </div>
+                <div class="pj-body">
+                  <div class="pj-meta">
+                    <span class="pj-badge pj-badge--award">YAPP 25th</span>
+                    <span class="pj-year">2025</span>
+                  </div>
+                  <h3 class="pj-title">Orbit</h3>
+                  <div class="pj-chips">
+                    <span>Android</span><span>MVI</span><span>Hilt</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Clody -->
+            <li class="project-item active" data-filter-item data-category="android">
+              <a href="portfolio/clody.html" class="pj-link">
+                <div class="pj-visual thumb-clody">
+                  <ion-icon name="cloudy-night-outline"></ion-icon>
+                </div>
+                <div class="pj-body">
+                  <div class="pj-meta">
+                    <span class="pj-badge pj-badge--award">SOPT 34th</span>
+                    <span class="pj-year">2024</span>
+                  </div>
+                  <h3 class="pj-title">Clody</h3>
+                  <div class="pj-chips">
+                    <span>Android</span><span>MVVM</span><span>AI</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- TastyLog -->
+            <li class="project-item active" data-filter-item data-category="android">
+              <a href="portfolio/tastylog.html" class="pj-link">
+                <div class="pj-visual thumb-tastylog">
+                  <ion-icon name="restaurant-outline"></ion-icon>
+                </div>
+                <div class="pj-body">
+                  <div class="pj-meta">
+                    <span class="pj-badge pj-badge--award">캡스톤디자인</span>
+                    <span class="pj-year">2024</span>
+                  </div>
+                  <h3 class="pj-title">TastyLog</h3>
+                  <div class="pj-chips">
+                    <span>Android</span><span>Maps API</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+      <!-- ===== WRITING / BLOG ===== -->
+      <article class="blog" data-page="writing">
+
+        <header>
+          <h2 class="h2 article-title" data-i18n="writing-title">Writing</h2>
+        </header>
+
+        <section class="blog-posts">
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Kotlin-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%84-%EC%95%8C%EA%B3%A0-%EA%B3%84%EC%8B%A0%EA%B0%80%EC%9A%94" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-flow">
+                    <ion-icon name="pulse-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Kotlin / Flow</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-05" data-i18n="blog-1-date">May 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-1-title">Kotlin: Async Streams with Flow</h3>
+                  <p class="blog-text" data-i18n="blog-1-text">What Flow is as an async stream, how it works under the hood, and when to reach for it.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Random-%ED%95%A8%EC%88%98%EB%8A%94-%EC%A7%84%EC%A7%9C-random%ED%95%9C-%EA%B0%92%EC%9D%84-%EA%B0%80%EC%A0%B8%EC%98%AC%EA%B9%8C" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-kotlin">
+                    <ion-icon name="shuffle-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Kotlin</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-04" data-i18n="blog-2-date">April 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-2-title">Is Random() Really Random?</h3>
+                  <p class="blog-text" data-i18n="blog-2-text">How pseudo-random number generators work and what "random" actually means in Kotlin.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Android-Kotest-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0-2" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-test">
+                    <ion-icon name="flask-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Testing</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-04" data-i18n="blog-3-date">April 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-3-title">Android: Exploring Kotest #2</h3>
+                  <p class="blog-text" data-i18n="blog-3-text">BehaviorSpec, DescribeSpec, and other Kotest testing styles explored in depth.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Android-Kotest-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0Setting-Writing-Test-1" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-test">
+                    <ion-icon name="flask-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Testing</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-04" data-i18n="blog-4-date">April 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-4-title">Android: Exploring Kotest #1</h3>
+                  <p class="blog-text" data-i18n="blog-4-text">Setting up Kotest in an Android project and writing the first tests.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Android-GitHub-Actions-CICD-%EC%99%84%EC%A0%84-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-cicd">
+                    <ion-icon name="git-branch-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">CI/CD</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-03" data-i18n="blog-5-date">March 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-5-title">Android GitHub Actions CI/CD Guide</h3>
+                  <p class="blog-text" data-i18n="blog-5-text">A step-by-step guide to setting up CI/CD for Android projects with GitHub Actions.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Android-ViewBinding-DataBinding" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-android">
+                    <ion-icon name="phone-portrait-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Android</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-03" data-i18n="blog-6-date">March 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-6-title">Android: ViewBinding & DataBinding</h3>
+                  <p class="blog-text" data-i18n="blog-6-text">Comparing ViewBinding and DataBinding — differences and when to use each in practice.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Kotlin-Data-Class-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-kotlin">
+                    <ion-icon name="code-slash-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Kotlin</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-03" data-i18n="blog-7-date">March 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-7-title">Mastering Kotlin Data Class</h3>
+                  <p class="blog-text" data-i18n="blog-7-text">componentN, copy, equals/hashCode and the common pitfalls of Kotlin data classes.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%97%90%EC%84%9C%EC%9D%98-DI-Hilt-Koin-feat.-Hilt-Deep-Dive" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-arch">
+                    <ion-icon name="git-network-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Architecture</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-03" data-i18n="blog-8-date">March 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-8-title">DI in Android: Hilt & Koin (Hilt Deep Dive)</h3>
+                  <p class="blog-text" data-i18n="blog-8-text">Comparing Hilt and Koin, then going deep into how Hilt works internally.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Cold-Stream-Hot-Stream" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-flow">
+                    <ion-icon name="water-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Kotlin / Flow</p>
+                    <span class="dot">•</span>
+                    <time datetime="2025-03" data-i18n="blog-9-date">March 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-9-title">Cold Stream & Hot Stream — Concepts Explained</h3>
+                  <p class="blog-text" data-i18n="blog-9-text">The difference between cold and hot streams, and when to pick Flow vs SharedFlow vs StateFlow.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Kotlin-Code-Convention" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-kotlin">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Kotlin</p>
+                    <span class="dot">•</span>
+                    <time datetime="2024-11" data-i18n="blog-10-date">November 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-10-title">Kotlin Code Convention (~Formatting)</h3>
+                  <p class="blog-text" data-i18n="blog-10-text">A summary of Kotlin official coding conventions and formatting best practices.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Observer-Pattern" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-arch">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Architecture</p>
+                    <span class="dot">•</span>
+                    <time datetime="2024-10" data-i18n="blog-11-date">October 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-11-title">Observer Pattern</h3>
+                  <p class="blog-text" data-i18n="blog-11-text">The Observer pattern concept and how it applies to Android event-driven architecture.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Sealed-Class-Vs-Enum-Class" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-kotlin">
+                    <ion-icon name="layers-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Kotlin</p>
+                    <span class="dot">•</span>
+                    <time datetime="2024-10" data-i18n="blog-12-date">October 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-12-title">Sealed Class vs Enum Class</h3>
+                  <p class="blog-text" data-i18n="blog-12-text">When to choose sealed class over enum class in Kotlin — key differences and practical use cases.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://velog.io/@rivermoon99/Kotlin-scope-functions" target="_blank" rel="noreferrer">
+                <figure class="blog-banner-box">
+                  <div class="blog-thumb bt-kotlin">
+                    <ion-icon name="code-slash-outline"></ion-icon>
+                  </div>
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Kotlin</p>
+                    <span class="dot">•</span>
+                    <time datetime="2024-10" data-i18n="blog-13-date">October 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title" data-i18n="blog-13-title">Kotlin Scope Functions</h3>
+                  <p class="blog-text" data-i18n="blog-13-text">A practical guide to let, run, with, apply, and also — when to reach for each one.</p>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+        </section>
+
+      </article>
+
+
+      <!-- ===== CONTACT ===== -->
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title" data-i18n="contact-title">Contact</h2>
+        </header>
+
+        <section class="contact-info-grid">
+          <div class="contact-info-card">
+            <div class="ci-icon"><ion-icon name="mail-outline"></ion-icon></div>
+            <div>
+              <p class="ci-label" data-i18n="ci-email">Email</p>
+              <a href="mailto:rkdms4971@gmail.com" class="ci-value">rkdms4971@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="ci-icon"><ion-icon name="logo-github"></ion-icon></div>
+            <div>
+              <p class="ci-label">GitHub</p>
+              <a href="https://github.com/Sunior-k" target="_blank" rel="noreferrer" class="ci-value">github.com/Sunior-k</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="ci-icon"><ion-icon name="location-outline"></ion-icon></div>
+            <div>
+              <p class="ci-label" data-i18n="ci-location">Location</p>
+              <span class="ci-value" data-i18n="ci-location-value">Seoul, South Korea</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-form-section">
+          <h3 class="h3 form-title" data-i18n="form-title">Get in Touch</h3>
+          <p class="contact-desc" data-i18n="contact-desc">Feel free to reach out — I'll get back to you as soon as possible.</p>
+          <a href="mailto:rkdms4971@gmail.com" class="mailto-btn">
+            <ion-icon name="mail-outline"></ion-icon>
+            <span data-i18n="form-btn">Send Email</span>
+          </a>
+        </section>
+
+      </article>
+
+    </div>
   </main>
 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android @ SK m&service — Moonsu Kang</title>
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+</head>
+<body>
+
+  <nav class="pf-nav">
+    <a href="../index.html" class="pf-nav-back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      Portfolio
+    </a>
+    <span class="pf-nav-divider">/</span>
+    <span class="pf-nav-title">Android @ SK m&service</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="pf-hero">
+    <p class="pf-hero-label">
+      <ion-icon name="car-outline"></ion-icon>
+      SK m&service · Android Engineer
+    </p>
+    <h1>TMAP Auto<br>Android 개발</h1>
+    <p class="pf-hero-desc">
+      SK m&service에서 TMAP Auto 관련 Android 개발에 참여했습니다.<br>
+      HUD BLE 연동, 네비게이션 앱, Mock Location 도구까지<br>
+      3개 프로젝트를 단독으로 설계하고 구현했습니다.
+    </p>
+    <div class="pf-badges">
+      <span class="pf-badge"><ion-icon name="business-outline"></ion-icon> SK m&service</span>
+      <span class="pf-badge"><ion-icon name="calendar-outline"></ion-icon> 2025.07 — 2025.09</span>
+      <span class="pf-badge"><ion-icon name="phone-portrait-outline"></ion-icon> Android · Kotlin</span>
+      <span class="pf-badge"><ion-icon name="construct-outline"></ion-icon> 3개 프로젝트</span>
+    </div>
+  </section>
+
+  <!-- ── Content ── -->
+  <main class="pf-content">
+
+    <!-- Role -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Role</span>
+      <h2>개요</h2>
+      <div class="pf-role-grid">
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">역할</p>
+          <p class="pf-role-card-value">Android Engineer</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">기간</p>
+          <p class="pf-role-card-value">2025.07 — 2025.09</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">도메인</p>
+          <p class="pf-role-card-value">TMAP Auto · 차량용 내비게이션</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">프로젝트</p>
+          <p class="pf-role-card-value">HUD BLE 연동 · 네비게이션 앱 · Mock Location</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Project 1: HUD BLE -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Project 01 · 2025.07 — 2025.08 (2주)</span>
+      <h2>차량용 HUD 내비게이션 연동 시스템</h2>
+      <p>
+        운전 중 내비게이션 화면을 주시하는 것은 안전 문제로 이어집니다.
+        TMAP의 실시간 주행 데이터를 BLE를 통해 HUD 디바이스로 무선 전송해 운전자가 전방을 보며 내비게이션 정보를 확인할 수 있도록 하는 시스템을 개발했습니다.
+        2024.08.01 실차 테스트를 완료했습니다.
+      </p>
+      <div class="pf-callout">
+        데이터 플로우: TMAP SDK → SharedFlow → 데이터 변환 → HUD 프로토콜 → BLE 전송<br>
+        TMAP EDC SDK에서 1초마다 수신되는 속도, TBT 경로 안내, 차선 정보(최대 10차선), SDI를 처리합니다.
+      </div>
+      <div class="pf-feature-list">
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="layers-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>멀티 모듈 Clean Architecture 설계</h4>
+            <p>
+              <code>core/bluetooth</code>, <code>core/common</code>, <code>core/designsystem</code>, <code>data</code>, <code>domain</code>, <code>feature</code> 계층으로 분리해 각 레이어의 책임을 명확히 구분했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="bluetooth-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>왜 BLE 전송에 Queue + Mutex + CompletableDeferred를 조합했는가</h4>
+            <p>
+              BLE GATT write는 비동기로 동작하기 때문에, ACK 응답을 확인하기 전에 다음 패킷을 보내면 데이터가 유실됩니다.
+              연속 전송 시 패킷 순서도 보장할 수 없었습니다.
+            </p>
+            <div class="pf-compare" style="margin-top:16px;">
+              <div class="pf-compare-side as-is">
+                <p class="pf-compare-label">AS-IS</p>
+                <p>write 요청을 순서 없이 연속 전송.<br>ACK 유실 시 다음 패킷이 그대로 전송됩니다.</p>
+              </div>
+              <div class="pf-compare-side to-be">
+                <p class="pf-compare-label">TO-BE</p>
+                <p>Channel 기반 Queue로 순차 처리합니다.<br>Mutex로 동시 전송을 방지하고, CompletableDeferred로 ACK 확인 후 다음 전송합니다.<br>50ms 페이싱으로 디바이스 처리 시간을 확보했습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Project 2: TMap Navigation -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Project 02 · 2025.08.05 — 2025.08.18 (2주)</span>
+      <h2>TMap 기반 네비게이션 앱 프로토타입</h2>
+      <p>
+        상용 내비게이션 SDK와 경로 데이터 API를 활용해 지도 표시, 장소 검색, 경로 안내, 실시간 위치 추적을 제공하는 Android 프로토타입을 설계하고 구현했습니다.
+      </p>
+      <div class="pf-feature-list" style="margin-top: 28px;">
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="map-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>MVI + 멀티모듈로 화면 상태를 관리한 이유</h4>
+            <p>
+              지도, 검색, 경로 안내가 동시에 동작하는 화면에서 상태가 분산되면 디버깅이 어렵습니다.
+              MVI의 Intent/State/Effect 패턴으로 단방향 데이터 플로우를 확립했으며,
+              기능 추가나 교체 시 영향 범위를 모듈 단위로 최소화했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="location-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>포그라운드/백그라운드 위치 추적 전략 분리</h4>
+            <p>
+              액티브 상태에서는 UI 응답성을 우선해 업데이트 주기를 짧게 가져가고 마커 이동을 부드럽게 처리했습니다.
+              백그라운드에서는 배터리와 정확도의 균형을 위해 주기를 조절하고 포그라운드 서비스를 활용했습니다.
+              오류, 권한, 네트워크 피드백은 단일 가이드로 통일했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="code-slash-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>경로 데이터 파이프라인 모듈화</h4>
+            <p>
+              경로 데이터를 블록 단위로 해석하고 좌표계 변환과 정합성 검증을 거쳐 지도 엔진에서 소비 가능한 모델로 출력하는 파이프라인을 설계했습니다.
+              트러블슈팅: Base64 인코딩 경로 데이터의 타입 불일치로 장거리 경로가 손상되는 문제를 발견하고 수정했습니다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Project 3: Mock Location -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Project 03 · 2025.08.3주 — 2025.09.2주 (4주)</span>
+      <h2>Mock Location 앱 — 실차 없이 주행 재현</h2>
+      <p>
+        차량용 내비게이션 개발 환경에서 실제 주행 없이도 위치 기반 기능을 테스트할 수 있는 Android 앱입니다.
+        CSV/로그 파일로 주행 데이터를 재생하거나, 경로 탐색 API 결과로 가상 주행을 시뮬레이션합니다.
+      </p>
+      <div class="pf-callout">
+        실차 없이 현실적인 주행 재현이 가능해져 개발·QA 리드타임이 단축됐습니다.
+      </div>
+      <div class="pf-feature-list">
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="git-branch-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>왜 속도 기반 위치 보간을 직접 구현했는가</h4>
+            <p>
+              로그 파일의 샘플 좌표를 그대로 전송하면 좌표 간격이 불균일해 마커가 튀듯 이동합니다.
+              입력 경로를 거리 누적으로 정규화한 뒤, 목표 속도와 업데이트 주기에 맞춰 간격 타깃 거리를 계산하고 샘플 좌표 사이를 선형 보간해 자연스러운 이동 궤적을 생성했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="document-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>대용량 로그 파싱 시 ANR 해결</h4>
+            <p>
+              대용량 CSV 로그 파일을 한 번에 읽으면 메인 스레드가 블로킹되어 ANR이 발생했습니다.
+              Buffered I/O + 라인 시퀀스 처리와 청크 단위 변환으로 메모리 사용량을 제어했으며,
+              진행률 콜백과 중도 중단 시 안전 종료/복구 로직을 추가했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="navigate-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>앱 재시작 후에도 위치 주입 연속성 유지</h4>
+            <p>
+              포그라운드 서비스로 백그라운드에서도 좌표를 계속 전송하도록 구현했습니다.
+              앱 프로세스가 종료되면 서비스 상태가 유실되는 문제는 상태 복원 기능으로 해결해 재시작 후에도 연속성을 유지했습니다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- AI with CursorAI -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Working Style</span>
+      <h2>사내 코드를 보호하면서 AI 도구를 활용한 방법</h2>
+      <p>
+        Cursor AI는 프로젝트 전체 컨텍스트를 읽어 코드 제안을 제공하는 구조입니다.
+        회사 내부 문서와 SDK가 포함된 프로젝트에서 그대로 사용하면 기밀 정보가 외부 모델에 노출될 수 있었습니다.
+      </p>
+      <div class="pf-callout">
+        듀얼 프로젝트 구조를 설계했습니다.<br>
+        실제 회사 프로젝트는 Android Studio만 사용하고, Cursor AI는 샌드박스 프로젝트에서만 사용했습니다.
+      </div>
+      <p>
+        워크플로우는 4단계입니다. 회사 코드에서 패턴을 파악하고 → 샌드박스에서 일반화된 버전을 작성한 뒤 → Cursor AI로 샌드박스 코드를 개선하고 → 개선된 패턴을 프로젝트에 수동 적용합니다.
+        <code>.cursorignore</code>로 SDK 파일(<code>*.aar</code>)과 스펙 문서(<code>*.pdf</code>)를 Cursor 인덱싱에서 제외했습니다.
+      </p>
+      <p>
+        결과적으로 아키텍처 패턴 학습 시간이 70% 단축됐고, 공개 알고리즘(선형 보간, Haversine 거리 계산 등) 구현이 2일에서 4시간으로 줄었습니다.
+        보안과 생산성을 동시에 확보한 프로세스로, 이후 프로젝트에도 적용 가능한 방법론을 정립했습니다.
+      </p>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Tech Stack -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Tech Stack</span>
+      <h2>사용 기술</h2>
+      <div class="pf-chip-grid">
+        <span class="pf-chip">Kotlin</span>
+        <span class="pf-chip">Jetpack Compose</span>
+        <span class="pf-chip">Clean Architecture</span>
+        <span class="pf-chip">Multi-Module</span>
+        <span class="pf-chip">MVVM · MVI</span>
+        <span class="pf-chip">Hilt</span>
+        <span class="pf-chip">Coroutines · Flow</span>
+        <span class="pf-chip">Android BLE GATT</span>
+        <span class="pf-chip">TMAP EDC SDK</span>
+        <span class="pf-chip">LocationManager</span>
+        <span class="pf-chip">Foreground Service</span>
+        <span class="pf-chip">Room</span>
+        <span class="pf-chip">DataStore</span>
+        <span class="pf-chip">Retrofit · OkHttp</span>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section class="pf-section">
+      <h2>Links</h2>
+      <div class="pf-links">
+        <a href="https://rkdms.notion.site/HUD-2774b00b487880c18185f7657328b5fc" target="_blank" rel="noreferrer" class="pf-link-btn primary">
+          <ion-icon name="bluetooth-outline"></ion-icon>
+          HUD BLE 연동
+        </a>
+        <a href="https://rkdms.notion.site/TMap-2774b00b487880d983c7c377d18ca15b" target="_blank" rel="noreferrer" class="pf-link-btn">
+          <ion-icon name="map-outline"></ion-icon>
+          TMap 네비게이션
+        </a>
+        <a href="https://rkdms.notion.site/Mock-Location-2774b00b4878802e8386c854495202d7" target="_blank" rel="noreferrer" class="pf-link-btn">
+          <ion-icon name="location-outline"></ion-icon>
+          Mock Location
+        </a>
+        <a href="https://rkdms.notion.site/AI-With-CursorAI-2784b00b4878814a8b86f3a96d7fb1e9" target="_blank" rel="noreferrer" class="pf-link-btn">
+          <ion-icon name="sparkles-outline"></ion-icon>
+          AI with CursorAI
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

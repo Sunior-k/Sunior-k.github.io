@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WalkLog — Moonsu Kang</title>
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+</head>
+<body>
+
+  <nav class="pf-nav">
+    <a href="../index.html" class="pf-nav-back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      Portfolio
+    </a>
+    <span class="pf-nav-divider">/</span>
+    <span class="pf-nav-title">WalkLog</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="pf-hero">
+    <p class="pf-hero-label">
+      <ion-icon name="footsteps-outline"></ion-icon>
+      Side Project · Android
+    </p>
+    <h1>WalkLog</h1>
+    <p class="pf-hero-desc">
+      걷기를 시작하게 하는 앱은 많습니다.<br>
+      WalkLog는 <strong>걷기를 지속하게 만드는 시스템</strong>을 설계했습니다.<br>
+      피트니스 앱 D30 리텐션 5% 미만이라는 구조적 문제를 행동 심리학 관점에서 접근한 1인 포트폴리오 프로젝트입니다.
+    </p>
+    <div class="pf-badges">
+      <span class="pf-badge"><ion-icon name="person-outline"></ion-icon> 1인 기획·설계·개발</span>
+      <span class="pf-badge"><ion-icon name="calendar-outline"></ion-icon> 2026.02 — ing</span>
+      <span class="pf-badge"><ion-icon name="phone-portrait-outline"></ion-icon> Android · minSdk 28</span>
+      <span class="pf-badge highlight"><ion-icon name="ellipse-outline"></ion-icon> In Progress</span>
+    </div>
+  </section>
+
+  <!-- ── Screenshot ── -->
+  <div class="pf-screenshot-area">
+    <div class="pf-screenshot-grid">
+      <div class="pf-screenshot-item">홈 화면</div>
+      <div class="pf-screenshot-item">미션 화면</div>
+      <div class="pf-screenshot-item">주간 리포트</div>
+      <div class="pf-screenshot-item">월간 리캡</div>
+    </div>
+  </div>
+
+  <!-- ── Content ── -->
+  <main class="pf-content">
+
+    <!-- Problem Definition -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Background</span>
+      <h2>피트니스 앱 D30 리텐션이 5%인 이유</h2>
+      <p>
+        보상 기반 걷기 앱은 초기 참여를 끌어내는 데 효과적이지만, 보상이 유일한 동기가 되는 순간 보상의 힘이 약해지면 행동도 같이 사라집니다.
+        이것이 <strong>과잉 정당화 효과(Overjustification Effect)</strong>입니다.
+      </p>
+      <div class="pf-callout">
+        보상이 유일한 이유가 되면, 보상이 식는 순간 행동도 같이 식습니다.<br>
+        WalkLog는 이탈이 일어나는 4개 지점 각각에 다른 개입을 설계했습니다.
+      </div>
+      <table class="pf-problem-table">
+        <thead>
+          <tr>
+            <th>이탈 지점</th>
+            <th>현상</th>
+            <th>개입 전략</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-problem">P1 — 진입 마찰</td>
+            <td>동기는 앱을 열어야 생기는데, 앱을 열 이유가 없으면 열지 않습니다.</td>
+            <td class="td-strategy">걷기 예보 (피크아워 스마트 알림)</td>
+          </tr>
+          <tr>
+            <td class="td-problem">P2 — 첫 실패</td>
+            <td>목표를 한 번 놓치면 "어차피 오늘은 틀렸다"는 심리가 작동합니다.</td>
+            <td class="td-strategy">스트릭 & 회복 시스템 (Grace Day)</td>
+          </tr>
+          <tr>
+            <td class="td-problem">P3 — 축적 무가치</td>
+            <td>쌓인 데이터가 자산이 아닌 숫자로만 남습니다.</td>
+            <td class="td-strategy">주간 리포트 아카이브 & 월간 리캡 스토리</td>
+          </tr>
+          <tr>
+            <td class="td-problem">P4 — 알림 피로</td>
+            <td>고정 시간 알림은 개인화되지 않으면 소음이 됩니다.</td>
+            <td class="td-strategy">NDK 엔진 기반 peakHour 개인화 알림</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Role -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Role</span>
+      <h2>혼자 설계하고 혼자 만들었습니다</h2>
+      <div class="pf-role-grid">
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">역할</p>
+          <p class="pf-role-card-value">기획 · 설계 · Android 개발</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">팀 구성</p>
+          <p class="pf-role-card-value">1인 (단독)</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">기간</p>
+          <p class="pf-role-card-value">2026.02 — 진행 중</p>
+        </div>
+        <div class="pf-role-card">
+          <p class="pf-role-card-label">플랫폼</p>
+          <p class="pf-role-card-value">Android (minSdk 28 · targetSdk 35)</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Architecture -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Architecture</span>
+      <h2>왜 모듈을 9개로 나눴는가</h2>
+      <p>
+        단일 모듈 구조에서는 어느 파일을 건드려도 전체를 다시 빌드하기 때문에, 기능이 늘어날수록 빌드 시간이 코드베이스 크기에 비례해 증가합니다.
+        NiA(Now in Android) 패턴을 기반으로 <code>feature</code> · <code>core</code> 계층을 분리했습니다.
+      </p>
+      <div class="pf-compare">
+        <div class="pf-compare-side as-is">
+          <p class="pf-compare-label">AS-IS — 단일 모듈</p>
+          <p>어느 파일을 수정해도 전체 재빌드.<br>Hilt · Compose 설정이 각 파일에 중복.<br>빌드 시간 ∝ 코드베이스 크기.</p>
+        </div>
+        <div class="pf-compare-side to-be">
+          <p class="pf-compare-label">TO-BE — 멀티 모듈</p>
+          <p><code>feature:home</code>만 수정하면 나머지는 재빌드하지 않습니다.<br>Convention Plugin이 모든 모듈에 설정을 통일 적용하며, 컴파일 타임에 단방향 의존성을 강제합니다.</p>
+        </div>
+      </div>
+      <div class="pf-arch-block"><span class="arch-accent">:app</span>
+├── <span class="arch-accent">:feature:home</span>        <span class="arch-dim">← 오늘의 걷기 대시보드 (Compose)</span>
+├── <span class="arch-accent">:feature:mission</span>     <span class="arch-dim">← 미션 & 스트릭 (Compose)</span>
+├── <span class="arch-accent">:feature:history</span>     <span class="arch-dim">← 월간 달력 (XML + ViewBinding)</span>
+├── <span class="arch-accent">:feature:report</span>      <span class="arch-dim">← 주간 리포트 아카이브 (Compose)</span>
+├── <span class="arch-accent">:feature:recap</span>       <span class="arch-dim">← 월간 리캡 스토리 (Compose)</span>
+├── <span class="arch-accent">:feature:forecast</span>    <span class="arch-dim">← 피크아워 예보 BottomSheet (Compose)</span>
+├── <span class="arch-accent">:feature:settings</span>    <span class="arch-dim">← 닉네임 & 테마 (XML + ViewBinding)</span>
+├── <span class="arch-accent">:feature:onboarding</span>  <span class="arch-dim">← 4-step HorizontalPager (Compose)</span>
+└── <span class="arch-accent">:core:*</span>
+    ├── <span class="arch-accent">:core:model</span>       <span class="arch-dim">← 순수 Kotlin 도메인 모델 (Android 의존성 없음)</span>
+    ├── <span class="arch-accent">:core:data</span>        <span class="arch-dim">← Repository 인터페이스 + 구현체</span>
+    ├── <span class="arch-accent">:core:database</span>    <span class="arch-dim">← Room 영속성 → core:model에만 의존</span>
+    ├── <span class="arch-accent">:core:datastore</span>   <span class="arch-dim">← DataStore 사용자 설정</span>
+    ├── <span class="arch-accent">:core:domain</span>      <span class="arch-dim">← UseCase (비즈니스 로직만)</span>
+    ├── <span class="arch-accent">:core:native</span>      <span class="arch-dim">← C++ NDK 엔진 + LiteRT ActivityClassifier</span>
+    ├── <span class="arch-accent">:core:analytics</span>   <span class="arch-dim">← CrashReporter 추상화 (Firebase 직접 노출 차단)</span>
+    ├── <span class="arch-accent">:core:common</span>      <span class="arch-dim">← WalkLogDispatchers 주입, 공통 유틸</span>
+    └── <span class="arch-accent">:benchmark</span>        <span class="arch-dim">← Baseline Profile 생성 · Macrobenchmark</span></div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Technical Decisions -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Technical Decisions</span>
+      <h2>왜 그 기술을 선택했는가</h2>
+      <div class="pf-feature-list">
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="code-slash-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>왜 걷기 분석 로직을 C++로 짰는가</h4>
+            <p>
+              7일 × 24시간 배열의 시간대별 패턴 분석을 Kotlin에서 처리하면 분석 로직이 ViewModel에 섞이고, 코드 수정 시 의도치 않게 분석 로직을 건드릴 위험이 생깁니다.
+            </p>
+            <div class="pf-compare" style="margin-top:16px;">
+              <div class="pf-compare-side as-is">
+                <p class="pf-compare-label">AS-IS</p>
+                <p>Kotlin Flow로 배열을 순회.<br>정렬 · 평균 · 정규화 로직이 ViewModel에 섞입니다.</p>
+              </div>
+              <div class="pf-compare-side to-be">
+                <p class="pf-compare-label">TO-BE</p>
+                <p>C++17로 분석 로직을 격리하고, JNI 단일 호출로 4개 지표를 반환합니다.<br>Kotlin은 결과만 소비합니다.</p>
+              </div>
+            </div>
+            <p style="margin-top:14px;">
+              peakHour(지수 가중 argmax) · weeklyTrend(전반부/후반부 비율 정규화) ·
+              recoveryDifficulty(목표 달성률 평균) · streakRisk(현재 페이스 기반) 4개 지표를 계산하며,
+              <code>noexcept</code>로 JNI 경계 예외 전파를 차단하고 <code>JNI_ABORT</code>로 읽기 전용 의도를 명시했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="footsteps-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>Health Connect 권한 상태를 왜 sealed class로 모델링했는가</h4>
+            <p>
+              Health Connect 권한 상태는 앱 미설치 / 설치됨 / 권한 없음 / 사용 가능 4단계로 나뉘며, 각 상태마다 UI 동작과 데이터 흐름이 다릅니다.
+            </p>
+            <div class="pf-callout">
+              가용성 체크 로직을 feature 레이어까지 올리면 각 화면이 동일한 분기를 반복하게 됩니다.<br>
+              Repository에서 sealed class로 상태를 모델링하면 UI는 상태만 소비하면 됩니다.
+            </div>
+            <p>
+              Android 14+에서는 <code>activity-alias</code> 두 개가 없으면 권한 다이얼로그 자체가 표시되지 않는데, 이는 공식 문서에도 명확히 기술되어 있지 않아 실기기 테스트에서 직접 발견했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="rocket-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>Baseline Profile이 Full AOT보다 빠른 이유</h4>
+            <p>
+              처음에는 Full AOT가 더 빠를 것이라고 예상했지만 실측은 반대였습니다 — Full AOT 724.6ms, Baseline Profile 700.5ms.
+              모든 코드를 사전 컴파일하면 캐시에 올리는 비용이 JIT 오버헤드를 상회하기 때문입니다.
+            </p>
+            <div class="pf-callout">
+              Baseline Profile의 핵심은 전체 AOT가 아닌 <strong>선별적 AOT</strong>입니다.<br>
+              시작 경로만 AOT로 컴파일하고 나머지는 JIT에 맡기는 것이 더 빠릅니다.
+            </div>
+            <p>
+              <code>:benchmark</code> 모듈에서 StartupBaselineProfile + HomeBaselineProfile 두 경로를 수집했으며,
+              ClassInit 4,141건 → 1,054건(−75%), JIT 이벤트 완전 제거를 확인했습니다.
+              <code>mapping.txt</code> Crashlytics 자동 업로드로 난독화 후에도 스택 트레이스를 복원할 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-feature-item">
+          <div class="pf-feature-icon"><ion-icon name="cube-outline"></ion-icon></div>
+          <div class="pf-feature-body">
+            <h4>R8 Full Mode로 APK 53%를 줄인 방법</h4>
+            <p>
+              R8 Full Mode는 모듈 경계를 넘어 전체 코드베이스를 최적화 단위로 보기 때문에, 사용하지 않는 코드 제거와 클래스 병합이 모듈 내부가 아니라 전체 범위에서 동작합니다.
+            </p>
+            <p>
+              결과적으로 APK 66MB → 31MB(−53%), DEX 크기 −80.9%, DEX 파일 5개 → 2개를 달성했습니다.
+              <code>-keepattributes SourceFile,LineNumberTable</code>을 유지해 난독화 이후에도 Crashlytics 스택 트레이스를 복원할 수 있도록 했습니다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Results -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Impact</span>
+      <h2>측정한 것들</h2>
+      <div class="pf-stat-grid">
+        <div class="pf-stat-item">
+          <p class="pf-stat-value">−53%</p>
+          <p class="pf-stat-label">APK 크기<br>66MB → 31MB</p>
+        </div>
+        <div class="pf-stat-item">
+          <p class="pf-stat-value">−80.9%</p>
+          <p class="pf-stat-label">DEX 크기<br>R8 Full Mode</p>
+        </div>
+        <div class="pf-stat-item">
+          <p class="pf-stat-value">−75%</p>
+          <p class="pf-stat-label">ClassInit 횟수<br>4,141 → 1,054건</p>
+        </div>
+        <div class="pf-stat-item">
+          <p class="pf-stat-value">0</p>
+          <p class="pf-stat-label">JIT 이벤트<br>Baseline Profile 적용 후</p>
+        </div>
+        <div class="pf-stat-item">
+          <p class="pf-stat-value">15개</p>
+          <p class="pf-stat-label">ADR 문서<br>아키텍처 결정 기록</p>
+        </div>
+        <div class="pf-stat-item">
+          <p class="pf-stat-value">4</p>
+          <p class="pf-stat-label">이탈 지점 개입<br>P1 · P2 · P3 · P4</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Challenges -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Challenges</span>
+      <h2>풀기 어려웠던 것들</h2>
+      <div class="pf-challenge-list">
+
+        <div class="pf-challenge-item">
+          <h4>Glance 위젯 동기화 타이밍</h4>
+          <p>
+            Glance 위젯은 별도 프로세스에서 동작하기 때문에, WorkManager 15분 주기 갱신만으로는 앱 실행 직후에도 오래된 걸음 수가 표시됐습니다.
+          </p>
+          <p>
+            WorkManager 주기 갱신과 앱 포그라운드 진입 시 강제 업데이트를 조합해 해결했습니다.
+            위젯 프로세스 특성상 앱 상태를 직접 구독할 수 없기 때문에, 앱이 포그라운드로 돌아올 때 <code>GlanceAppWidget.update()</code>를 명시적으로 호출하도록 설계했습니다.
+          </p>
+        </div>
+
+        <div class="pf-challenge-item">
+          <h4>Compose + XML 하이브리드 다크모드 전환</h4>
+          <p>
+            Compose의 <code>isSystemInDarkTheme()</code>은 Compose 영역에만 적용되고, History · Settings 화면은 XML 기반이라 <code>night</code> 한정자 기반 시스템 테마를 따릅니다.
+            두 영역을 동시에 전환하려면 단일 진입점이 필요했습니다.
+          </p>
+          <p>
+            <code>AppCompatDelegate.setDefaultNightMode()</code>로 앱 전체 <code>Configuration.uiMode</code>를 변경하는 방법을 선택했고,
+            <code>distinctUntilChanged()</code>로 중복 호출에 의한 불필요한 Activity Recreation을 억제했습니다.
+          </p>
+        </div>
+
+        <div class="pf-challenge-item">
+          <h4>JNI 경계에서의 C++ 예외 처리</h4>
+          <p>
+            JNI 경계를 넘는 C++ 예외는 정의되지 않은 동작을 일으키기 때문에, 분석 함수에 <code>noexcept</code>를 명시해 경계를 넘지 않도록 강제했습니다.
+            입력 배열은 읽기 전용이므로 <code>GetFloatArrayElements</code>에 <code>JNI_ABORT</code>를 사용해 네이티브 수정 내용이 원본 배열에 반영되지 않음을 명시했습니다.
+          </p>
+          <p>
+            Kotlin 쪽 <code>require()</code>로 사전 조건을 검증해 잘못된 입력이 JNI 레이어까지 내려오지 않도록 설계했으며,
+            방어 로직은 JNI 진입 전 Kotlin 레이어에서 담당하고 JNI 내부는 안전성 보장에만 집중합니다.
+          </p>
+        </div>
+
+        <div class="pf-challenge-item">
+          <h4>Baseline Profile — Full AOT보다 느린 이유 분석</h4>
+          <p>
+            Full AOT 적용 시 오히려 Baseline Profile보다 시작이 느렸는데(724.6ms vs 700.5ms),
+            모든 코드를 사전 컴파일하면 캐시에 올리는 비용이 JIT 오버헤드를 상회하기 때문입니다.
+            시작 경로를 선별적으로 AOT하는 Baseline Profile 방식이 더 효율적임을 실측으로 확인했습니다.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pf-divider"></div>
+
+    <!-- Tech Stack -->
+    <section class="pf-section">
+      <span class="pf-section-tag">Tech Stack</span>
+      <h2>사용 기술</h2>
+      <div class="pf-chip-grid">
+        <span class="pf-chip">Kotlin 2.3.21</span>
+        <span class="pf-chip">Jetpack Compose</span>
+        <span class="pf-chip">Material 3</span>
+        <span class="pf-chip">MVVM · UDF</span>
+        <span class="pf-chip">Multi-Module</span>
+        <span class="pf-chip">Convention Plugin</span>
+        <span class="pf-chip">Hilt</span>
+        <span class="pf-chip">Coroutines · Flow</span>
+        <span class="pf-chip">Room</span>
+        <span class="pf-chip">DataStore</span>
+        <span class="pf-chip">WorkManager</span>
+        <span class="pf-chip">Jetpack Glance</span>
+        <span class="pf-chip">Google Health Connect</span>
+        <span class="pf-chip">NDK / JNI · C++17</span>
+<span class="pf-chip">Baseline Profile</span>
+        <span class="pf-chip">Macrobenchmark</span>
+        <span class="pf-chip">R8 Full Mode</span>
+        <span class="pf-chip">Firebase Crashlytics</span>
+        <span class="pf-chip">XML · ViewBinding</span>
+        <span class="pf-chip">MockK · Turbine</span>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section class="pf-section">
+      <h2>Links</h2>
+      <div class="pf-links">
+        <a href="https://github.com/Sunior-k/walklog" target="_blank" rel="noreferrer" class="pf-link-btn primary">
+          <ion-icon name="logo-github"></ion-icon>
+          GitHub Repository
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
